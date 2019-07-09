@@ -1,13 +1,8 @@
 <template>
-  <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
-    <el-menu-item index="1">儀錶板</el-menu-item>
-    <el-submenu index="2">
-      <template slot="title">工作台</template>
-      <el-menu-item index="2-1">移動</el-menu-item>
-      <el-menu-item index="2-2">澆水</el-menu-item>
-      <el-menu-item index="2-3">施肥</el-menu-item>
-    </el-submenu>
-    <el-menu-item index="3" >消息中心</el-menu-item>
+  <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" :router = 'true' >
+    <el-menu-item index="/dashboard">儀錶板</el-menu-item>
+    <el-menu-item index="/workstation">工作台</el-menu-item>
+    <el-menu-item index="/history" >歷史資料</el-menu-item>
     <el-menu-item index="4" @click="logout">登出</el-menu-item>
   </el-menu>
 </template>

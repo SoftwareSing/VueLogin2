@@ -4,6 +4,8 @@ import Header from '@/components/Header'
 import Hello from '@/components/Hello'
 import Login from '@/components/Login'
 import Dashboard from '@/components/Dashboard'
+import Workstation from '@/components/Workstation'
+import HistoryView from '@/components/HistoryView'
 import firebase from 'firebase'
 
 Vue.use(Router)
@@ -39,6 +41,28 @@ let router = new Router({
       name: 'dashboard',
       components: {
         default: Dashboard,
+        nav: Header
+      },
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/workstation',
+      name: 'workstation',
+      components: {
+        default: Workstation,
+        nav: Header
+      },
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/history',
+      name: 'historyView',
+      components: {
+        default: HistoryView,
         nav: Header
       },
       meta: {
